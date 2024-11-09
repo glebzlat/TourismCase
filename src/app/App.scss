@@ -1,0 +1,17 @@
+@use '../styles/shared.scss' as *;
+
+.map-container {
+  margin: rem(15);
+  overflow: hidden;
+  cursor: grab;
+  height: rem(500);
+  width: rem(500);
+}
+
+:global(.leaflet-tile-container), :global(.leaflet-container) {
+  height: rem(500);
+}
+
+:global(.leaflet-control-attribution) {
+  display: none;
+}
