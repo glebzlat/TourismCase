@@ -14,12 +14,18 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   width: 375px;
   height: 561px;
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+}
+
+.container__map-wrapper {
+  flex-basis: 100%;
 }
 
 .header {
@@ -34,4 +40,34 @@ body {
 
 .leaflet-control-attribution {
   display: none;
+}
+
+.container__bottom-pane {
+  position: relative;
+  padding: 15px 20px;
+}
+
+.bottom-pane__button {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.bottom-pane__text {
+  margin: 0;
+  text-align: center;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
