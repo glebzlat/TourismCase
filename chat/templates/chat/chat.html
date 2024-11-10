@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <link href="https://fonts.googleapis.com/css?family=SF+Pro+Text&display=swap" rel="stylesheet" />
+    <link href="{% static 'chat/css/chat.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Chat</h1>
+            <button class="back-button">Back</button>
+        </div>
+
+        <div class="chat-messages">
+            <div id="message-placeholder" class="message-placeholder">
+                <button class="send-button" onclick="sendDefaultMessage()">Что вам интересно?</button>
+            </div>
+        </div>
+
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" class="chat-input" placeholder="Type your message..." />
+            <button class="send-button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messageText = input.value.trim();
+            if (messageText) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', 'sent');
+                messageDiv.innerHTML = `<span class="message-text">${messageText}</span>`;
+                document.querySelector('.chat-messages').appendChild(messageDiv);
+                input.value = ''; 
+                scrollToBottom();
+            }
+        }
+
+        function sendDefaultMessage() {
+            const messageText = "Что вам интересно?";
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', 'sent');
+            messageDiv.innerHTML = `<span class="message-text">${messageText}</span>`;
+            document.querySelector('.chat-messages').appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        function scrollToBottom() {
+            const messagesContainer = document.querySelector('.chat-messages');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>
