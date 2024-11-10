@@ -51,8 +51,8 @@ body {
   position: absolute;
   top: 5px;
   left: 10px;
-  cursor: pointer;
   padding: 10px;
+  text-decoration: none;
 }
 
 .bottom-pane__text {

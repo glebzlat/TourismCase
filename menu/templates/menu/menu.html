@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Profile</title>
     <link href="https://fonts.googleapis.com/css?family=SF+Pro+Text&display=swap" rel="stylesheet" />
-    
+
     {% load static %}
-    
-    <link href="{% static 'menu/css/menu.css' %}" rel="stylesheet" /> 
+
+    <link href="{% static 'menu/css/menu.css' %}" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
@@ -23,26 +23,32 @@
             <div class="card-image"></div>
         </div>
 
-        <div class="menu">
-            <div class="menu-item">
-                <span class="menu-title">Chat</span>
-                <div class="menu-icons">
-                    <div class="icon chat-icon"></div>
-                </div>
-            </div>
-            <div class="menu-item">
-                <span class="menu-title">Map</span>
-                <div class="menu-icons">
-                    <div class="icon map-icon"></div>
-                </div>
-            </div>
-            <div class="menu-item">
-                <span class="menu-title">Subscription</span>
-                <div class="menu-icons">
-                    <div class="icon subscription-icon"></div>
-                </div>
-            </div>
-        </div>
+        <ul class="menu">
+            <li class="menu-item">
+                <a href="/" class="menu-link">
+                    <span class="menu-title">Chat</span>
+                    <div class="menu-icons">
+                        <div class="icon chat-icon"></div>
+                    </div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{% url 'map_view' %}" class="menu-link">
+                    <span class="menu-title">Map</span>
+                    <div class="menu-icons">
+                        <div class="icon map-icon"></div>
+                    </div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{% url 'menu_view' %}" class="menu-link">
+                    <span class="menu-title">Subscription</span>
+                    <div class="menu-icons">
+                        <div class="icon subscription-icon"></div>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
